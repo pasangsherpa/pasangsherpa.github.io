@@ -14,7 +14,7 @@ var gulp = require('gulp'),
     config = pkg;
 
 config.src = "src/";
-config.dist = "dist/";
+config.dist = "./";
 config.today = (new Date()).toDateString();
 
 // CSS
@@ -47,10 +47,10 @@ gulp.task('js', function() {
         .pipe(plugins.rename({
             suffix: '.min'
         }))
+        .pipe(plugins.uglify())
         .pipe(plugins.header(banner, {
             config: config
         }))
-        .pipe(plugins.uglify())
         .pipe(gulp.dest(config.dist + 'js'))
         .pipe(plugins.notify({
             message: 'JavaScripts task complete'
@@ -59,7 +59,7 @@ gulp.task('js', function() {
 
 // Images
 gulp.task('img', function() {
-    return gulp.src('src/img/**/*')
+    return gulp.src(config.src + 'img/*')
         .pipe(plugins.cache(plugins.imagemin({
             optimizationLevel: 3,
             progressive: true,
@@ -71,13 +71,7 @@ gulp.task('img', function() {
         }));
 });
 
-// Clean
-gulp.task('clean', function(cb) {
-    plugins.clean([config.dist + 'css', config.dist + 'js', config.dist + 'img'], cb)
-});
-
 // Default task
-gulp.task('default', ['clean'], function() {
+gulp.task('default', function() {
     gulp.start('css', 'js', 'img');
 });
-
