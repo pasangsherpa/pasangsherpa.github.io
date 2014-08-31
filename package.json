@@ -1,0 +1,36 @@
+{
+  "name": "pasangsherpa.github.io",
+  "version": "0.0.0",
+  "description": "All my open source projects page",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pasangsherpa/pasangsherpa.github.io.git"
+  },
+  "author": "Pasang Sherpa <pgyalzen@gmail.com> (https://pasangsherpa.github.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pasangsherpa/pasangsherpa.github.io/issues"
+  },
+  "homepage": "https://github.com/pasangsherpa/pasangsherpa.github.io",
+  "devDependencies": {
+    "gulp": "~3.8.7",
+    "gulp-concat": "~2.3.4",
+    "gulp-cache": "~0.2.1",
+    "gulp-changed": "~1.0.0",
+    "gulp-clean": "~0.3.1",
+    "gulp-header": "~1.0.5",
+    "gulp-imagemin": "~1.0.1",
+    "gulp-jshint": "~1.8.4",
+    "gulp-load-plugins": "~0.5.3",
+    "gulp-less": "~1.3.5",
+    "gulp-minify-css": "~0.3.7",
+    "gulp-notify": "~1.5.0",
+    "gulp-rename": "~1.2.0",
+    "gulp-uglify": "~0.3.1",
+    "mocha": "*"
+  }
+}
